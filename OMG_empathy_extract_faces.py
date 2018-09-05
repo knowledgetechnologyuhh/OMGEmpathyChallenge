@@ -20,15 +20,12 @@ def splitFrames(emotion, videoPath, tempFolder):
     shutil.rmtree(tempFolder)
     os.makedirs(tempFolder)
 
-    copyTarget = "/data/datasets/OMG-Empathy/clip1.mp4"
-    print "--- Copying file:", videoPath + " ..."
-    copyfile(videoPath,copyTarget)
+
     print "--- Extracting frames:", videoPath + " ..."
-    command1 = "avconv -v quiet -i " + copyTarget + " " + tempFolder + "/videoframe%d.png"
-    #print "Command:", command1
-    #raw_input("here")
+    command1 = "avconv -v quiet -i " + videoPath + " " + tempFolder + "/videoframe%d.png"
+
     subprocess.call(command1, shell=True)
-    os.remove(copyTarget)
+
 
 def progressBar(value, endvalue, bar_length=20):
     percent = float(value) / endvalue
@@ -124,10 +121,10 @@ def extractFrames(path, savePath, tempFolder, batch=""):
 
 if __name__ == "__main__":
 
-    tempFolder = "/data/datasets/OMG-Empathy/temp/"
+    tempFolder = "/data/temp"
 
-    path ="/informatik2/wtm/datasets/KT Published Datasets/20182509_Empathy_Challenge_Barros/Dataset/Stitched/"
-    savePath ="/data/datasets/OMG-Empathy/faces/"
+    path ="/data/videos/"
+    savePath ="/data/faces/"
 
     batches = sorted(os.listdir(path))
     detector = dlib.get_frontal_face_detector()

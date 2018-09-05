@@ -1,4 +1,4 @@
-# OMGEmotionChallenge
+# OMGEmpathyChallenge
 
 Website: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empathy.html
 

@@ -23,6 +23,7 @@ We created a series of eight topics that the actor talked about, each of them re
 - Story 6 - I won a martial arts challenge.
 - Story 7 - I had an adventurous traveling experience.
 - Story 8 - I cheated on an exam when I was younger.
+
 The actor was free and encouraged to improvise on each of these topics, so that we recorded a natural conversation scenario, but the actor was instructed to maintain the control over the conversation. This way, we guaranteed that the recorded interaction were not one-sided, and at the same time that the listener did not overtake the direction of the conversation.
 
 We recorded the audio and visual data of both the actor and listener for each interaction. Immediately after each session, we asked the listeners to watch the interactions on a computer screen and use a joystick to annotate how they felt in terms of valence using a continuous scale ranging from positive to negative values. The use of the joystick allowed for continuous and gradual tracking of annotations which are temporally related to the interaction scenario.

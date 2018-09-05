@@ -19,10 +19,10 @@ We created a series of eight topics that the actor talked about, each of them re
 - Story 2 - I started a band!
 - Story 3 - My relation with my dog.
 - Story 4 - I had a bad flight experience.
-- Story 5 - I ate a very bad food.
-- Story 6 - I won a martial arts challenge.
-- Story 7 - I had an adventurous traveling experience.
-- Story 8 - I cheated on an exam when I was younger.
+- Story 5 - I had an adventurous traveling experience.
+- Story 6 - I cheated on an exam when I was younger.
+- Story 7 - I won a martial arts challenge.
+- Story 8 - I ate a very bad food.
 
 The actor was free and encouraged to improvise on each of these topics, so that we recorded a natural conversation scenario, but the actor was instructed to maintain the control over the conversation. This way, we guaranteed that the recorded interaction were not one-sided, and at the same time that the listener did not overtake the direction of the conversation.
 

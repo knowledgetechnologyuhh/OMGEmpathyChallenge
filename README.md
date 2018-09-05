@@ -15,14 +15,14 @@ The OMG-Empathy corpus is composed of recordings of two individuals talking to e
 
 We created a series of eight topics that the actor talked about, each of them related to one or more emotional state:
 
-- A childhood friend.
-- I started a band!
-- My relation with my dog.
-- I had a bad flight experience.
-- I ate a very bad food.
-- I won a martial arts challenge.
-- I had an adventurous traveling experience.
-- I cheated on an exam when I was younger.
+- Story 1 - A childhood friend.
+- Story 2 - I started a band!
+- Story 3 - My relation with my dog.
+- Story 4 - I had a bad flight experience.
+- Story 5 - I ate a very bad food.
+- Story 6 - I won a martial arts challenge.
+- Story 7 - I had an adventurous traveling experience.
+- Story 8 - I cheated on an exam when I was younger.
 The actor was free and encouraged to improvise on each of these topics, so that we recorded a natural conversation scenario, but the actor was instructed to maintain the control over the conversation. This way, we guaranteed that the recorded interaction were not one-sided, and at the same time that the listener did not overtake the direction of the conversation.
 
 We recorded the audio and visual data of both the actor and listener for each interaction. Immediately after each session, we asked the listeners to watch the interactions on a computer screen and use a joystick to annotate how they felt in terms of valence using a continuous scale ranging from positive to negative values. The use of the joystick allowed for continuous and gradual tracking of annotations which are temporally related to the interaction scenario.
@@ -40,37 +40,15 @@ The **Generalized Empathy track**, where the teams must predict the general beha
 
 **Dataset Structure**
 
-The dataset is separated into the following files:
-
-- omg_TrainVideos.csv
-- omg_ValidationVideos.csv
-- DetailedAnnotations (You will receive this data when registering for the challenge)
-- Transcripts (You will receive this data when registering for the challenge)
-
-Each of the CSV files contain the following information:
+The dataset is separated into 10 folders, one with recordings of each listener. Each folder contains the recordings of 8 different stories, available as a .mp4 file. The order of the stories are described above. Each .mp4 file has an associated .csv file with the valence annotations. The .csv file contains one annotation per frame.And it is structured as follows:
 
 
-link: The link to access the youtube video
-start:  the timestamp where the video starts
-end: the timestamp where the video ends
-video: the video-id, used to associate the video with the annotations
-utterance: the utterance name, used to associate the video with the annotations
-arousal: the calculated goldstandard of the arousal
-valence: the calculated goldstandard of the valence
-emotionMaxVote: the resulting categorical emotion from voting over all annotations
 
-For the OMG-Emotion challenge, we will compute the arousal/valence value of a model with the goldstandard of the test set. The categorical emotion will not be used for evaluating the model, but could be usefull when designing or training your model.
-
-The DetailedAnnotations folder contains all the annotations for each utterance. Each annotation was made when taking into consideration the video as part of a sequence, so it could be useful to use this additional information when designing your 
-models.
-
-The Transcripts folder contains all the transcripts for each of the utterance in the dataset.
-
-**Scripts** 
+**Scripts**
 
 We provide the following scripts:
 
-- prepare_data.py: a script used to read, download, cut and organize the dataset.
+- OMG_empathy_extract_faces.py: a script used to extract the faces of the actors and subjects of the dataset.
 - calculateEvaluationCCC.py: a script used to calculate the CCC of the output of a model and the validation set. The file with the model's output must be a CSV file containng the following information: 
 
 ```

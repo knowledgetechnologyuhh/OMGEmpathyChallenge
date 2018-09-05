@@ -50,7 +50,7 @@ The dataset is separated into 10 folders, one with recordings of each listener. 
 We provide the following scripts:
 
 - OMG_empathy_extract_faces.py: a script used to extract the faces of the actors and subjects of the dataset.
-- calculateEvaluationCCC.py: a script used to calculate the CCC of the output of a model and the validation set. The file with the model's output must be a CSV file containng the following information: 
+- calculateEvaluationCCC.py: a script used to calculate the CCC of the output of a model and the validation set. The file with the model's output must be a CSV file containng the following information:
 
 ```
 video, utterance, arousal, valence
@@ -70,19 +70,27 @@ It is important to note that the order of the videos and utterances present in t
 **How to participate**
 
 Important dates: 
-- Publishing of training and validation data with annotations: March 14, 2018. 
-- Publishing of the test data, and opening of the online submission: April 11, 2018.
-- Closing of the submission portal: April 13, 2018. 
-- Announcement of the winner through the submission portal: April 18, 2018.
+- 25.09.2018 - Opening of the Challenge - Team registrations begin
+- 01.10.2018 - Training/validation data and annotation available
+- 01.12.2018 - Test data release
+- 03.12.2018 - Final submission (Results and code)
+- 05.12.2018 - Final submission (Paper)
+- 07.12.2018 - Announcement of the winners
 
 
-To participate, please send us an email to barros@informatik.uni-hamburg.de with the title "OMG-Emotion Recognition Team Registration". This e-mail must contain the following information: 
+To participate to the challenge, please send us an email to barros @ informatik.uni-hamburg.de with the title "OMG-Empathy Team Registration". This e-mail must contain the following information:
 - Team Name
 - Team Members
 - Affiliation
+- Participating tracks
 
 Each team can have a maximum of 5 participants. You will receive from us the access to the dataset and all the important information about how to train and evaluate your models. 
 For the final submission, each team will have to send us a .csv file containing the final arousal/valence values for each of the utterances on the test dataset. We also request a link to a GitHub repository where your solution must be stored, and a link to an ArXiv paper with 4-6 pages describing your model and results. The best papers will be invited to submit their detailed research to a journal yet to be specified. Also, the best participating teams will hold an oral presentation about their solution during the WCCI/IJCNN 2018 conference.
+
+
+**Paper submission**
+
+Each participating team must submit, together with their final results, a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications ( Latex and Word templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings.
 
 **License**
 
@@ -96,7 +104,7 @@ This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license
 
 **More information** 
 
-- You can access a detailed information about an early version of the dataset here: https://arxiv.org/abs/1803.05434
-- You can also find usefull scripts for processing the dataset here: https://github.com/knowledgetechnologyuhh/OMGEmotionChallenge
+- our website: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empathy.html
+- You can also find usefull scripts for processing the dataset here: https://github.com/knowledgetechnologyuhh/OMGEmpathyChallenge
 
 For more informations: barros@informatik.uni-hamburg.de

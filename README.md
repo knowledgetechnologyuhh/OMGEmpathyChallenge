@@ -50,33 +50,17 @@ The dataset is separated into 10 folders, one with recordings of each listener. 
 We provide the following scripts:
 
 - OMG_empathy_extract_faces.py: a script used to extract the faces of the actors and subjects of the dataset.
-- calculateEvaluationCCC.py: a script used to calculate the CCC of the output of a model and the validation set. The file with the model's output must be a CSV file containng the following information:
 
-```
-video, utterance, arousal, valence
-74de88564,utterance_1.mp4,0.05738688939330001,0.115515408794,
-74de88564,utterance_2.mp4,0.05738688939330001,0.119515408794,
-74de88564,utterance_3.mp4,0.05738688939330001,0.2122515408794,
-74de88564,utterance_4.mp4,0.05738688939330001,0.314515408794,
-74de88564,utterance_5.mp4,0.05738688939330001,0.10294515408794,
-74de88564,utterance_6.mp4,0.05738688939330001,0.1224515408794,
-74de88564,utterance_7.mp4,0.05738688939330001,0.654515408794,
-...
-
-```
-
-It is important to note that the order of the videos and utterances present in this file **must** be the same as the order of the videos and utterances on the  omg_ValidationVideos.csv.
 
 **How to participate**
 
 Important dates: 
-- 25.09.2018 - Opening of the Challenge - Team registrations begin
-- 01.10.2018 - Training/validation data and annotation available
-- 01.12.2018 - Test data release
-- 03.12.2018 - Final submission (Results and code)
-- 05.12.2018 - Final submission (Paper)
-- 07.12.2018 - Announcement of the winners
-
+- 25th of September 2018  - Opening of the Challenge - Team registrations begin </li>
+- 1st of October 2018 - Training/validation data and annotation available </li>
+- 1st of December 2018 - Test data release </li>
+- 3rd of December 2018 - Final submission (Results and code) </li>
+- 5th of December 2018 - Final submission (Paper) </li>
+- 7th of December 2018 - Announcement of the winners </li>
 
 To participate to the challenge, please send us an email to barros @ informatik.uni-hamburg.de with the title "OMG-Empathy Team Registration". This e-mail must contain the following information:
 - Team Name

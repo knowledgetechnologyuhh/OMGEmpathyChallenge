@@ -1,6 +1,6 @@
 
 import os
-
+from shutil import copyfile
 
 import subprocess
 
@@ -17,37 +17,51 @@ def sort_nicely(l):
 
 
 def extractAudio(path, savePath):
+    videos = os.listdir(path)
 
-    videos = sort_nicely(os.listdir(path + "/"))
+    for video in videos:
+        videoPath = path + "/" + video
 
-    for v in videos:
+        if not os.path.exists(savePath):
+            print "- Processing Video:", videoPath + " ..."
+            os.makedirs(savePath)
 
-        utterances = sort_nicely(os.listdir(path + "/" + v + "/video"))
-
-        for ut in utterances:
-
-
-            savepath = savePath + v+ "/audio/"+ut +"/"
-
-            print "Reading: ", path+"/"+v + "/video/" + ut
-            print "Saving:", savepath
-
-            if not os.path.exists(savepath):
-
-                os.makedirs(savepath)
-                command1 = "avconv -i " + path+"/"+v + "/video/" + ut + " -ab 160k -ac 1 -ar 16000 -vn " + savepath+"/audio.wav"
-                print "Command:", command1
-                subprocess.call(command1, shell=True)
+        copyTarget = "/data/datasets/OMG-Empathy/clip1.mp4"
+        print "--- Copying file:", videoPath + " ..."
+        copyfile(videoPath, copyTarget)
+        print "--- Extracting audio:", savePath + "/"+video+".wav" + " ..."
+        command1 = "avconv -v quiet -i " + copyTarget + " -ab 160k -ac 1 -ar 16000 -vn " + savePath + "/"+video+".wav"
+        subprocess.call(command1, shell=True)
 
 
-            else:
-                print "Skip:", savepath
+    # for session in sessions:
+    #
+    #     dialogues = os.listdir(path + "/" + session)
+    #
+    #     for dialogue in dialogues:
+    #         videoPath = path + "/" + session + "/" + dialogue
+    #
+    #         savePathAudio = savePath + "/" + session + "/" + dialogue
+    #         if not os.path.exists(savePathAudio):
+    #             print "- Processing Video:", videoPath + " ..."
+    #             os.makedirs(savePathAudio)
+    #
+    #             copyTarget = "/data/datasets/OMG-Empathy/clip1.mp4"
+    #             print "--- Copying file:", videoPath + " ..."
+    #             copyfile(videoPath, copyTarget)
+    #             print "--- Extracting audio:", savePathAudio + " ..."
+    #             command1 = "avconv -v quiet -i " + copyTarget + " -ab 160k -ac 1 -ar 16000 -vn " + savePathAudio + "/audio.wav"
+    #             subprocess.call(command1, shell=True)
+    #
+    #         else:
+    #             print "Skip:", savePathAudio
+
+
 
 if __name__ == "__main__":
 
-
-    path ="/data/datasets/OMG-Emotion/OMG_Videos/"
-    savePath ="/data/datasets/OMG-Emotion/audio_extraced_all/"
+    path ="/informatik3/wtm/datasets/KT Published Datasets/20182509_Empathy_Challenge_Barros/Dataset/Final_2/Validation/Videos/"
+    savePath ="/data/datasets/OMG-Empathy/audio/Validation/"
 
     extractAudio(path,savePath)
 

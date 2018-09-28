@@ -119,10 +119,10 @@ if __name__ == "__main__":
 
 
     #Path where the videos are
-    path ="/informatik3/wtm/datasets/KT Published Datasets/20182509_Empathy_Challenge_Barros/Dataset/Final_2/Training/Videos/"
+    path ="/data/videos/Training/"
 
     #Path where the faces will be saved
-    savePath ="/data/datasets/OMG-Empathy/faces_New_Training/"
+    savePath ="/data/faces/Training/"
 
     # If 1, the face detector will act upon each of the frames. If 1000, the face detector update its position every 100 frames.
     faceDetectorPrecision = 1000

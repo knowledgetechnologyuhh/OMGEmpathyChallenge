@@ -41,8 +41,7 @@ The **Generalized Empathy track**, where the teams must predict the general beha
 
 **Dataset Structure**
 
-The dataset is separated into 10 folders, one with recordings of each listener. Each folder contains the recordings of 8 different stories, available as a .mp4 file. The order of the stories are described above. Each .mp4 file has an associated .csv file with the valence annotations. The .csv file contains one annotation per frame.And it is structured as follows:
-
+The dataset is separated into .mp4 videos. Each video name contain the story and subject information. The annotations follow the same name structure. Each .csv contain a header ("valence") and each row of the file represents the valence of one frame of the video.
 
 
 **Scripts**
@@ -52,7 +51,10 @@ We provide the following scripts:
 - OMG_empathy_extract_audio.py: a script used to extract an audio file (in .wav format) for all the videos of the dataset.
 
 - OMG_empathy_extract_faces.py: a script used to extract the faces (from both actors and subjects) for all the videos of the dataset.
+
 - calculateCCC.py: a script used to calculate the CCC of the output of a model and the validation set for both tracks.
+
+To calculate the CCC for both tracks, the script takes as arguments two folders: one with the validation .csv files and one with the model's .csv files. Be aware that the folders must contain the same amount of files and they must have he same file name - following the same structure as the annotations: Subject_X_Story_X.csv. Each file must contain a header ("valence") and each row of the file must be the valence output for each frame of the video.
 
 
 **How to participate**
@@ -71,21 +73,15 @@ To participate to the challenge, please send us an email to barros @ informatik.
 - Affiliation
 - Participating tracks
 
-Each team can have a maximum of 5 participants. You will receive from us the access to the dataset and all the important information about how to train and evaluate your models. 
-For the final submission, each team will have to send us a .csv file containing the final arousal/valence values for each of the utterances on the test dataset. We also request a link to a GitHub repository where your solution must be stored, and a link to an ArXiv paper with 4-6 pages describing your model and results. The best papers will be invited to submit their detailed research to a journal yet to be specified. Also, the best participating teams will hold an oral presentation about their solution during the WCCI/IJCNN 2018 conference.
-
-
-**Paper submission**
-
-Each participating team must submit, together with their final results, a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications ( Latex and Word templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings.
-
-**Final Submission**
-
 We split the corpus into three subsets: training, validation and testing. The participants will receive the training and validation sets, together with the associated annotations once they subscribe to the challenge. The subscription will be done via e-mail. Each participant team must consist of 1 to 5 participants and must agree to use the data only for scientific purposes. Each team can choose to take part in one or both the tracks.
 
 After the training period is over, the testing set will be released without the associated annotations.
 
 Each team must submit, via e-mail, their final predictions as a .csv file for each video on the test set. The format of the .csv file must be the same as the provided annotations. Together with the final submission, each team must send a short 2-4 pages paper describing their solution published on Arxiv and the link for a github page to their solution. If a team fails to submit any of these items, their submission will be invalidated. Each team can submit 3 complete submissions for each track.
+
+**Paper submission**
+
+Each participating team must submit, together with their final results, a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications ( Latex and Word templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings.
 
 **License**
 

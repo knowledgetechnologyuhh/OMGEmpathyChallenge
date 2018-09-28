@@ -7,28 +7,6 @@ import shutil
 from shutil import copyfile
 import sys
 
-def sort_nicely(l):
-    """ Sort the given list in the way that humans expect.
-    """
-    import re
-    convert = lambda text: int(text) if text.isdigit() else text
-    alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
-    l.sort(key=alphanum_key)
-    return l
-
-def splitFrames(emotion, videoPath, tempFolder):
-    shutil.rmtree(tempFolder)
-    os.makedirs(tempFolder)
-
-    copyTarget = "/data/datasets/OMG-Empathy/clip1.mp4"
-    print "--- Copying file:", videoPath + " ..."
-    copyfile(videoPath, copyTarget)
-
-    print "--- Extracting frames:", copyTarget + " ..."
-    command1 = "avconv -v quiet -i " + copyTarget + " " + tempFolder + "/videoframe%d.png"
-
-    subprocess.call(command1, shell=True)
-
 
 def progressBar(value, endvalue, bar_length=20):
     percent = float(value) / endvalue
@@ -39,164 +17,95 @@ def progressBar(value, endvalue, bar_length=20):
     sys.stdout.flush()
 
 
-
-def extractFrames(path, savePath, tempFolder, batch=""):
-
-    videos = os.listdir(path + "/" + batch)
+def extractFramesFromVideo(path,savePath, faceDetectorPrecision):
+    videos = os.listdir(path + "/")
 
     for video in videos:
+
         videoPath = path + "/" + video
+        print "- Processing Video:", videoPath + " ..."
+        detector = dlib.get_frontal_face_detector()
+        dataX = []
+
+        copyTarget = "/data/datasets/OMG-Empathy/clip1.mp4"
+        print "--- Copying file:", videoPath + " ..."
+        copyfile(videoPath, copyTarget)
+        cap = cv2.VideoCapture(copyTarget)
+
+        #cap = cv2.VideoCapture(videoPath)
+        totalFrames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        numberOfImages = 0
+        check = True
+        flag = True
+        imageNumber = 0
+        lastImageWithFaceDetected = 0
+        print "- Extracting Faces:", str(totalFrames) + " Frames ..."
 
         savePathActor = savePath + "/" + video + "/Actor/"
-        savePathSubject = savePath + "/" + video +  "/Subject/"
+        savePathSubject = savePath + "/" + video + "/Subject/"
 
         if not os.path.exists(savePathActor):
-            print "- Processing Video:", savePathActor + " ..."
-
             os.makedirs(savePathActor)
             os.makedirs(savePathSubject)
-            imageNumber = 0
-            lastImageWithFaceDetected = 0
-            splitFrames(batch, videoPath, tempFolder)
+            while (check):
+                    check, img = cap.read()
+                    if img is not None:
 
-            totalFrames = len(os.listdir(tempFolder))
+                        #Extract actor face
+                        imageActor = img[0:720, 0:1080]
+                        if lastImageWithFaceDetected == 0 or lastImageWithFaceDetected > faceDetectorPrecision:
+                            dets = detector(imageActor, 1)
+                            lastImageWithFaceDetected = 0
+                            oldDetsActor = dets
+                        else:
+                            dets = oldDetsActor
 
-            print "- Extracting Faces:", str(totalFrames) + " Frames ..."
-            numberOfFaces = 0
-            for image in sort_nicely(os.listdir(tempFolder)):
+                        try:
+                            for i, d in enumerate(dets):
+                                croped = imageActor[d.top():d.bottom(), d.left():d.right()]
+                                cv2.imwrite(savePathActor + "/%d.png" % imageNumber, croped)
 
-                img = cv2.imread(tempFolder + "/" + image)
+                        except:
+                            print "------error!"
 
-                # Extract Actor Face
-                imageActor = img[0:720, 0:1080]
-                # cv2.imwrite("/data/datasets/OMG-Empathy/actor.png", imageActor)
+                        # Extract Subject Face
+                        imageSubject = img[0:720, 1080:2560]
+                        if lastImageWithFaceDetected == 0 or lastImageWithFaceDetected > faceDetectorPrecision:
+                            dets = detector(imageSubject, 1)
+                            lastImageWithFaceDetected = 0
+                            oldDetsSubject = dets
+                        else:
+                            dets = oldDetsSubject
 
-                if lastImageWithFaceDetected == 0 or lastImageWithFaceDetected > 10:
-                    dets = detector(imageActor, 1)
-                    lastImageWithFaceDetected = 0
-                    oldDetsActor = dets
-                else:
-                    dets = oldDetsActor
+                        try:
+                            for i, d in enumerate(dets):
+                                croped = imageSubject[d.top():d.bottom(), d.left():d.right()]
+                                cv2.imwrite(savePathSubject + "/%d.png" % imageNumber, croped)
 
-                try:
-                    for i, d in enumerate(dets):
-                        croped = imageActor[d.top():d.bottom(), d.left():d.right()]
-                        cv2.imwrite(savePathActor + "/%d.png" % imageNumber, croped)
+                        except:
+                            print "------error!"
 
-                except:
-                    print "------error!"
-
-                # Extract Subject Face
-                imageSubject = img[0:720, 1080:2560]
-                if lastImageWithFaceDetected == 0 or lastImageWithFaceDetected > 10:
-                    dets = detector(imageSubject, 1)
-                    lastImageWithFaceDetected = 0
-                    oldDetsSubject = dets
-                else:
-                    dets = oldDetsSubject
-
-                try:
-                    for i, d in enumerate(dets):
-                        croped = imageSubject[d.top():d.bottom(), d.left():d.right()]
-                        cv2.imwrite(savePathSubject + "/%d.png" % imageNumber, croped)
-
-                except:
-                    print "------error!"
-
-                imageNumber = imageNumber + 1
-                lastImageWithFaceDetected = lastImageWithFaceDetected + 1
-                progressBar(imageNumber, totalFrames)
-        else:
-            print "Skip:", videoPath
+                        imageNumber = imageNumber + 1
+                        lastImageWithFaceDetected = lastImageWithFaceDetected + 1
+                        progressBar(imageNumber, totalFrames)
 
 
-    # for session in sessions:
-    #
-    #     dialogues = os.listdir(path + "/" + batch + session)
-    #
-    #     for dialogue in dialogues:
-    #
-    #         videoPath = path + "/" + session + "/" + dialogue
-    #
-    #         savePathActor = savePath +  "/"+session+"/"+dialogue+ "/Actor/"
-    #         savePathSubject = savePath + "/" + session + "/" + dialogue + "/Subject/"
-    #
-    #
-    #         if not os.path.exists(savePathActor):
-    #             print "- Processing Video:", savePathActor + " ..."
-    #
-    #             os.makedirs(savePathActor)
-    #             os.makedirs(savePathSubject)
-    #             imageNumber = 0
-    #             lastImageWithFaceDetected = 0
-    #             splitFrames(batch, videoPath, tempFolder)
-    #
-    #             totalFrames = len(os.listdir(tempFolder))
-    #
-    #             print "- Extracting Faces:", str(totalFrames) + " Frames ..."
-    #             numberOfFaces = 0
-    #             for image in sort_nicely(os.listdir(tempFolder)):
-    #
-    #                 img = cv2.imread(tempFolder + "/" + image)
-    #
-    #                 #Extract Actor Face
-    #                 imageActor = img[0:720,0:1080]
-    #                 #cv2.imwrite("/data/datasets/OMG-Empathy/actor.png", imageActor)
-    #
-    #                 if lastImageWithFaceDetected == 0 or lastImageWithFaceDetected > 10:
-    #                     dets = detector(imageActor, 1)
-    #                     lastImageWithFaceDetected = 0
-    #                     oldDetsActor = dets
-    #                 else:
-    #                     dets = oldDetsActor
-    #
-    #
-    #                 try:
-    #                    for i, d in enumerate(dets):
-    #                        croped = imageActor[d.top():d.bottom(), d.left():d.right()]
-    #                        cv2.imwrite(savePathActor + "/%d.png" % imageNumber, croped)
-    #
-    #                 except:
-    #                    print "------error!"
-    #
-    #
-    #                 #Extract Subject Face
-    #                 imageSubject = img[0:720, 1080:2560]
-    #                 if lastImageWithFaceDetected == 0 or lastImageWithFaceDetected > 10:
-    #                     dets = detector(imageSubject, 1)
-    #                     lastImageWithFaceDetected = 0
-    #                     oldDetsSubject = dets
-    #                 else:
-    #                     dets = oldDetsSubject
-    #
-    #
-    #                 try:
-    #                    for i, d in enumerate(dets):
-    #                        croped = imageSubject[d.top():d.bottom(), d.left():d.right()]
-    #                        cv2.imwrite(savePathSubject + "/%d.png" % imageNumber, croped)
-    #
-    #
-    #                 except:
-    #                    print "------error!"
-    #
-    #                 imageNumber = imageNumber + 1
-    #                 lastImageWithFaceDetected = lastImageWithFaceDetected + 1
-    #                 progressBar(imageNumber, totalFrames)
-    #         else:
-    #             print "Skip:", videoPath
 
 
 
 
 if __name__ == "__main__":
 
-    tempFolder = "/data/datasets/OMG-Empathy/temp"
 
+    #Path where the videos are
     path ="/informatik3/wtm/datasets/KT Published Datasets/20182509_Empathy_Challenge_Barros/Dataset/Final_2/Validation/Videos/"
-    savePath ="/data/datasets/OMG-Empathy/faces_New/"
 
-    batches = sorted(os.listdir(path))
+    #Path where the faces will be saved
+    savePath ="/data/datasets/OMG-Empathy/faces_New_Validation/"
+
+    # If 1, the face detector will act upon each of the frames. If 1000, the face detector update its position every 100 frames.
+    faceDetectorPrecision = 1000
+
     detector = dlib.get_frontal_face_detector()
 
-    for batch in batches:
-        extractFrames(path, savePath, tempFolder)
+    extractFramesFromVideo(path, savePath, tempFolder)

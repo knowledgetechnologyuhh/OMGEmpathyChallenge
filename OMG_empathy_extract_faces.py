@@ -51,19 +51,35 @@ def extractFramesFromVideo(path,savePath, faceDetectorPrecision):
                     check, img = cap.read()
                     if img is not None:
 
+
                         #Extract actor face
                         imageActor = img[0:720, 0:1080]
                         if lastImageWithFaceDetected == 0 or lastImageWithFaceDetected > faceDetectorPrecision:
                             dets = detector(imageActor, 1)
                             lastImageWithFaceDetected = 0
-                            oldDetsActor = dets
+
+                            if not len(dets) == 0:
+                                oldDetsActor = dets
                         else:
                             dets = oldDetsActor
 
+
+                        # if imageNumber > 8008:
+                        #     print "Dets Actor:", dets
+                        #     print "Dets Actor:", len(dets)
+                        #
+                        # if imageNumber == 5:
+                        #     print "Dets Actor:", dets
+                        #     print "Dets Actor:", len(dets)
+
                         try:
-                            for i, d in enumerate(dets):
-                                croped = imageActor[d.top():d.bottom(), d.left():d.right()]
-                                cv2.imwrite(savePathActor + "/%d.png" % imageNumber, croped)
+                            if not len(dets) == 0:
+                                for i, d in enumerate(dets):
+                                    croped = imageActor[d.top():d.bottom(), d.left():d.right()]
+                                    cv2.imwrite(savePathActor + "/%d.png" % imageNumber, croped)
+                            else:
+                                cv2.imwrite(savePathActor + "/%d.png" % imageNumber, imageActor)
+
 
                         except:
                             print "------error!"
@@ -73,14 +89,19 @@ def extractFramesFromVideo(path,savePath, faceDetectorPrecision):
                         if lastImageWithFaceDetected == 0 or lastImageWithFaceDetected > faceDetectorPrecision:
                             dets = detector(imageSubject, 1)
                             lastImageWithFaceDetected = 0
-                            oldDetsSubject = dets
+
+                            if not len(dets) == 0:
+                                oldDetsSubject = dets
                         else:
                             dets = oldDetsSubject
 
                         try:
-                            for i, d in enumerate(dets):
-                                croped = imageSubject[d.top():d.bottom(), d.left():d.right()]
-                                cv2.imwrite(savePathSubject + "/%d.png" % imageNumber, croped)
+                            if not len(dets) == 0:
+                                for i, d in enumerate(dets):
+                                    croped = imageSubject[d.top():d.bottom(), d.left():d.right()]
+                                    cv2.imwrite(savePathSubject + "/%d.png" % imageNumber, croped)
+                            else:
+                                cv2.imwrite(savePathActor + "/%d.png" % imageNumber, imageSubject)
 
                         except:
                             print "------error!"
@@ -98,14 +119,14 @@ if __name__ == "__main__":
 
 
     #Path where the videos are
-    path ="/informatik3/wtm/datasets/KT Published Datasets/20182509_Empathy_Challenge_Barros/Dataset/Final_2/Validation/Videos/"
+    path ="/informatik3/wtm/datasets/KT Published Datasets/20182509_Empathy_Challenge_Barros/Dataset/Final_2/Training/Videos/"
 
     #Path where the faces will be saved
-    savePath ="/data/datasets/OMG-Empathy/faces_New_Validation/"
+    savePath ="/data/datasets/OMG-Empathy/faces_New_Training/"
 
     # If 1, the face detector will act upon each of the frames. If 1000, the face detector update its position every 100 frames.
     faceDetectorPrecision = 1000
 
     detector = dlib.get_frontal_face_detector()
 
-    extractFramesFromVideo(path, savePath, tempFolder)
+    extractFramesFromVideo(path, savePath, faceDetectorPrecision)

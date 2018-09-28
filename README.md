@@ -49,7 +49,10 @@ The dataset is separated into 10 folders, one with recordings of each listener. 
 
 We provide the following scripts:
 
-- OMG_empathy_extract_faces.py: a script used to extract the faces of the actors and subjects of the dataset.
+- OMG_empathy_extract_audio.py: a script used to extract an audio file (in .wav format) for all the videos of the dataset.
+
+- OMG_empathy_extract_faces.py: a script used to extract the faces (from both actors and subjects) for all the videos of the dataset.
+- calculateCCC.py: a script used to calculate the CCC of the output of a model and the validation set for both tracks.
 
 
 **How to participate**
@@ -75,6 +78,14 @@ For the final submission, each team will have to send us a .csv file containing 
 **Paper submission**
 
 Each participating team must submit, together with their final results, a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications ( Latex and Word templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings.
+
+**Final Submission**
+
+We split the corpus into three subsets: training, validation and testing. The participants will receive the training and validation sets, together with the associated annotations once they subscribe to the challenge. The subscription will be done via e-mail. Each participant team must consist of 1 to 5 participants and must agree to use the data only for scientific purposes. Each team can choose to take part in one or both the tracks.
+
+After the training period is over, the testing set will be released without the associated annotations.
+
+Each team must submit, via e-mail, their final predictions as a .csv file for each video on the test set. The format of the .csv file must be the same as the provided annotations. Together with the final submission, each team must send a short 2-4 pages paper describing their solution published on Arxiv and the link for a github page to their solution. If a team fails to submit any of these items, their submission will be invalidated. Each team can submit 3 complete submissions for each track.
 
 **License**
 

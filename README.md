@@ -5,7 +5,7 @@ Website: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empathy.ht
 **Organization**
 
 Pablo Barros, University of Hamburg, Germany </br>
-Nikhil Churamani, University of Hamburg, Germany </br>
+Nikhil Churamani, University of Cambridge, United Kingdom </br>
 Angelica Lim, Simon Frases University, Canada </br>
 Stefan Wermter, Hamburg University, Germany </br>
 

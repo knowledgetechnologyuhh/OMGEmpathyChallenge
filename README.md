@@ -46,10 +46,9 @@ We choose to calculate the valence of each of our videos using the winner model 
 
 To provide a proper baseline for the dataset, and to encourage the development of computational models which are not based on perception only, we calculate the valence using the actor (by using only the actor facial expression and audio) and the listener (only the listener face expression and audio). We then calculate the CCC between the perception model and the self-assessment annotations using both protocols.
 
-|**Personalized Track** | - |
-
-
-|**Subject**| **CCC** |
+**Subject Only**
+**Personalized Track**
+|Subject| CCC |
 | --- | --- |
 |Subject 1 | 0.01|
 |Subject 2 | 0.11|
@@ -63,10 +62,9 @@ To provide a proper baseline for the dataset, and to encourage the development o
 |Subject 10 | 0.10|
 |**Mean**   | 0.091|
 
-
-| -  |- |
-|**Generalized Track** |- |
-|**Story** | **CCC**|
+**Generalized Track**
+|Story | CCC|
+| --- | --- |
 |Story 1 | 0.111|
 |**Mean**    | 0.111|
 

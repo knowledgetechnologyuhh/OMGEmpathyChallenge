@@ -44,7 +44,7 @@ As a baseline for both protocols, we decided to use a state-of-the-art model for
 
 We choose to calculate the valence of each of our videos using a model trained on the recent OMG-Emotion Recognition challenge[1]. This model makes use of a hybrid neural network for multimodal emotion recognition. It uses a temporal self-organizing layer to learn prototypes of expressions which are used for emotion recognition classification.
 
-To provide a proper baseline for the dataset, and to encourage the development of computational models which are not based on perception only, we calculate the valence of the actor (by using only the actor facial expression and audio) and the listener (only the listener face expression and audio). We then calculate the CCC between the perception model and the self-assessment annotations using both protocols. This results were calculated using the validation set.
+To provide a proper baseline for the dataset, and to encourage the development of computational models which are not based on perception only, we calculated the predicted valence using the perception information from the actor (only the actor facial expression and audio) and from the listener (only the listener face expression and audio) individually. We then calculate the CCC between the perception model and the self-assessment annotations using both protocols. This results were calculated using the validation set.
 
 [1] Barros, P., Barakova, E., & Wermter, S. (2018). A Deep Neural Model Of Emotion Appraisal. arXiv preprint arXiv:1808.00252.
 

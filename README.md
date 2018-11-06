@@ -44,7 +44,32 @@ As a baseline for both protocols, we decided to use a state-of-the-art model for
 
 We choose to calculate the valence of each of our videos using the winner model of the recent OMG-Emotion Recognition challenge~\cite{Zheng2018}. This model makes use of a hybrid neural network for multimodal emotion recognition. It uses a temporal attention layer to improve the recognition of emotions over time. The baseline model is composed of two individual networks used for feature extraction: a video network and an audio one.
 
-To provide a proper baseline for the dataset, and to encourage the development of computational models which are not based on perception only, we calculate the valence using the actor (by using only the actor facial expression and audio), the listener (only the listener face expression and audio) and a combination of both. The combination was obtained by averaging the actor's and the listener's valences. We then calculate the CCC between the perception model and the self-assessment annotations using both protocols.
+To provide a proper baseline for the dataset, and to encourage the development of computational models which are not based on perception only, we calculate the valence using the actor (by using only the actor facial expression and audio) and the listener (only the listener face expression and audio). We then calculate the CCC between the perception model and the self-assessment annotations using both protocols.
+
+
+|Subject|
+----------| -----
+|Personalized Track|
+----------| -----
+Subject 1 | 0.01
+Subject 2 | 0.11
+Subject 3 | 0.04
+Subject 4 | 0.1
+Subject 5 | 0.11
+Subject 6 | 0.35
+Subject 7 | -0.01
+Subject 8 | 0.05
+Subject 9 | 0.05
+Subject 10 | 0.10
+-----------------
+Mean      | 0.091
+-----------------
+|Generalized Track|
+Story 1 | 0.111
+---------------
+Mean    | 0.111
+---------------
+
 
 
 

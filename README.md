@@ -48,27 +48,27 @@ To provide a proper baseline for the dataset, and to encourage the development o
 
 
 |Subject|
-----------| -----
+|----------| -----|
 |Personalized Track|
-----------| -----
-Subject 1 | 0.01
-Subject 2 | 0.11
-Subject 3 | 0.04
-Subject 4 | 0.1
-Subject 5 | 0.11
-Subject 6 | 0.35
-Subject 7 | -0.01
-Subject 8 | 0.05
-Subject 9 | 0.05
-Subject 10 | 0.10
------------------
-Mean      | 0.091
------------------
+|----------| -----|
+|Subject 1 | 0.01|
+|Subject 2 | 0.11|
+|Subject 3 | 0.04|
+|Subject 4 | 0.1|
+|Subject 5 | 0.11|
+|Subject 6 | 0.35|
+|Subject 7 | -0.01|
+|Subject 8 | 0.05|
+|Subject 9 | 0.05|
+|Subject 10 | 0.10|
+|-----------------
+|Mean      | 0.091|
+|-----------------
 |Generalized Track|
-Story 1 | 0.111
----------------
-Mean    | 0.111
----------------
+|Story 1 | 0.111|
+|---------------|
+|Mean    | 0.111|
+|---------------|
 
 
 

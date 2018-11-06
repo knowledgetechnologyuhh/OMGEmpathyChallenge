@@ -48,6 +48,7 @@ To provide a proper baseline for the dataset, and to encourage the development o
 
 |**Personalized Track** | - |
 |**Subject**| **CCC** |
+| --- | --- |
 |Subject 1 | 0.01|
 |Subject 2 | 0.11|
 |Subject 3 | 0.04|

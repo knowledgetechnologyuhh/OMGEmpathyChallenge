@@ -48,6 +48,7 @@ To provide a proper baseline for the dataset, and to encourage the development o
 
 **Subject Only**
 **Personalized Track**
+
 |Subject| CCC |
 | --- | --- |
 |Subject 1 | 0.01|
@@ -63,6 +64,7 @@ To provide a proper baseline for the dataset, and to encourage the development o
 |**Mean**   | 0.091|
 
 **Generalized Track**
+
 |Story | CCC|
 | --- | --- |
 |Story 1 | 0.111|

@@ -19,8 +19,8 @@ We created a series of eight topics that the actor talked about, each of them re
 - Story 2 - I started a band!
 - Story 3 - My relation with my dog.
 - Story 4 - I had a bad flight experience.
-- Story 5 - I had an adventurous traveling experience.
-- Story 6 - I cheated on an exam when I was younger.
+- Story 5 - I cheated on an exam when I was younger.
+- Story 6 - I had an adventurous traveling experience.
 - Story 7 - I won a martial arts challenge.
 - Story 8 - I ate a very bad food.
 

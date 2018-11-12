@@ -5,7 +5,7 @@ Website: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empathy.ht
 **Organization**
 
 Pablo Barros, University of Hamburg, Germany </br>
-Nikhil Churamani, University of Hamburg, Germany </br>
+Nikhil Churamani, University of Cambridge, United Kingdom </br>
 Angelica Lim, Simon Frases University, Canada </br>
 Stefan Wermter, Hamburg University, Germany </br>
 
@@ -19,8 +19,8 @@ We created a series of eight topics that the actor talked about, each of them re
 - Story 2 - I started a band!
 - Story 3 - My relation with my dog.
 - Story 4 - I had a bad flight experience.
-- Story 5 - I had an adventurous traveling experience.
-- Story 6 - I cheated on an exam when I was younger.
+- Story 5 - I cheated on an exam when I was younger.
+- Story 6 - I had an adventurous traveling experience.
 - Story 7 - I won a martial arts challenge.
 - Story 8 - I ate a very bad food.
 
@@ -28,7 +28,7 @@ The actor was free and encouraged to improvise on each of these topics, so that 
 
 We recorded the audio and visual data of both the actor and listener for each interaction. Immediately after each session, we asked the listeners to watch the interactions on a computer screen and use a joystick to annotate how they felt in terms of valence using a continuous scale ranging from positive to negative values. The use of the joystick allowed for continuous and gradual tracking of annotations which are temporally related to the interaction scenario.
 
-We used a total of four different actors, each one of them taking part in the conversation with two different topics. This way we collected different reaction levels from different listeners for the same actor. We had a total of 10 subjects, each one taking part in all the eight topics. This gave us 80 different interaction videos. Each video had an average of 6 minutes, providing us with 480 minutes (8 hours) of recordings.
+We used a total of four different actors, each one of them taking part in the conversation with two different topics. This way we collected different reaction levels from different listeners for the same actor. We had a total of 10 subjects, each one taking part in all the eight topics. This gave us 80 different interaction videos. Each video had an average of 5 minutes and 12 seconds, providing us with 415 minutes (around 7 hours) of recordings.
 
 **Tracks**
 
@@ -38,6 +38,67 @@ The **Personalized Empathy track**, where each team must predict the empathy of 
 
 The **Generalized Empathy track**, where the teams must predict the general behavior of all the participants over each story. We will measure the performance of the proposed models to learn a general empathic measure for each of the stories individually. We encourage the proposed models to take into consideration the aggregated behavior of all the participants for each story, and to generalize this behavior in a newly perceived story.
 
+**Baseline**
+
+As a baseline for both protocols, we decided to use a state-of-the-art model for emotion recognition. By providing a baseline with an emotion recognition model, we hope to encourage others to use more specific solutions for empathy tracking.
+
+We choose to calculate the valence of each of our videos using a model trained on the recent OMG-Emotion Recognition challenge[1]. This model makes use of a hybrid neural network for multimodal emotion recognition. It uses a temporal self-organizing layer to learn prototypes of expressions which are used for emotion recognition classification.
+
+To provide a proper baseline for the dataset, and to encourage the development of computational models which are not based on perception only, we calculated the predicted valence using the perception information from the actor (only the actor facial expression and audio) and from the listener (only the listener face expression and audio) individually. We then calculate the CCC between the perception model and the self-assessment annotations using both protocols. This results were calculated using the validation set.
+
+[1] Barros, P., Barakova, E., & Wermter, S. (2018). A Deep Neural Model Of Emotion Appraisal. arXiv preprint arXiv:1808.00252.
+
+**Listener Only**
+
+**Personalized Track**
+
+|Subject| CCC |
+| --- | --- |
+|Subject 1 | 0.01|
+|Subject 2 | 0.11|
+|Subject 3 | 0.04|
+|Subject 4 | 0.1|
+|Subject 5 | 0.11|
+|Subject 6 | 0.35|
+|Subject 7 | -0.01|
+|Subject 8 | 0.05|
+|Subject 9 | 0.05|
+|Subject 10 | 0.10|
+|**Mean**   | 0.091|
+
+**Generalized Track**
+
+|Story | CCC|
+| --- | --- |
+|Story 1 | 0.111|
+|**Mean**    | 0.111|
+
+
+**Actor Only**
+
+**Personalized Track**
+
+|Subject| CCC |
+| --- | --- |
+|Subject 1 | 0.00|
+|Subject 2 | -0.12|
+|Subject 3 | -0.06|
+|Subject 4 | -0.00|
+|Subject 5 | -0.04|
+|Subject 6 | 0.01|
+|Subject 7 | -0.05|
+|Subject 8 | -0.03|
+|Subject 9 | -0.07|
+|Subject 10 | -0.00|
+|**Mean**   | -0.04|
+
+
+**Generalized Track**
+
+|Story | CCC|
+| --- | --- |
+|Story 1 | -0.04|
+|**Mean**    | -0.04|
 
 **Dataset Structure**
 
@@ -60,12 +121,12 @@ To calculate the CCC for both tracks, the script takes as arguments two folders:
 **How to participate**
 
 Important dates: 
-- 25th of September 2018  - Opening of the Challenge - Team registrations begin </li>
-- 1st of October 2018 - Training/validation data and annotation available </li>
-- 1st of December 2018 - Test data release </li>
-- 3rd of December 2018 - Final submission (Results and code) </li>
-- 5th of December 2018 - Final submission (Paper) </li>
-- 7th of December 2018 - Announcement of the winners </li>
+- 25th of September 2018  - Opening of the Challenge - Team registrations begin
+- 1st of October 2018 - Training/validation data and annotation available
+- 3rd of December 2018 - Test data release
+- 5th of December 2018 - Final submission (Results and code)
+- 7th of December 2018 - Final submission (Paper)
+- 10th of December 2018 - Announcement of the winners
 
 To participate to the challenge, please send us an email to barros @ informatik.uni-hamburg.de with the title "OMG-Empathy Team Registration". This e-mail must contain the following information:
 - Team Name

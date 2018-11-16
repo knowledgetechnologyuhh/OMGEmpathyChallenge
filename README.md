@@ -138,7 +138,7 @@ We split the corpus into three subsets: training, validation and testing. The pa
 
 After the training period is over, the testing set will be released without the associated annotations.
 
-Each team must submit, via e-mail, their final predictions as a .csv file for each video on the test set. The format of the .csv file must be the same as the provided annotations. Together with the final submission, each team must send a short 2-4 pages paper describing their solution published on Arxiv and the link for a github page to their solution. If a team fails to submit any of these items, their submission will be invalidated. Each team can submit 3 complete submissions for each track.
+Each team must submit, via e-mail, their final predictions as a .csv file for each video on the test set. The format of the .csv file must be the same as the provided annotations. Together with the final submission, each team must send a short 2-4 pages paper describing their solution published on [Arxiv](https://arxiv.org) and the link for a github page to their solution. If a team fails to submit any of these items, their submission will be invalidated. Each team can submit 3 complete submissions for each track.
 
 **Paper submission**
 

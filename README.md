@@ -6,7 +6,7 @@ Website: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empathy.ht
 
 Pablo Barros, University of Hamburg, Germany </br>
 Nikhil Churamani, University of Cambridge, United Kingdom </br>
-Angelica Lim, Simon Frases University, Canada </br>
+Angelica Lim, Simon Fraser University, Canada </br>
 Stefan Wermter, Hamburg University, Germany </br>
 
 **OMG-Empathy Dataset**
@@ -142,7 +142,7 @@ Each team must submit, via e-mail, their final predictions as a .csv file for ea
 
 **Paper submission**
 
-Each participating team must submit, together with their final results, a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications ( Latex and Word templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings.
+Each participating team must submit, together with their final results, a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications ([Latex](http://fg2019.org/wp-content/uploads/2018/06/FG2019_latex_template.zip) (Please create the pdf using FGfinalcopy) and [Word](https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/Conference-template-A4.doc) templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings.
 
 **License**
 
@@ -159,4 +159,4 @@ This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license
 - our website: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empathy.html
 - You can also find usefull scripts for processing the dataset here: https://github.com/knowledgetechnologyuhh/OMGEmpathyChallenge
 
-For more informations: barros@informatik.uni-hamburg.de
+For more information: barros@informatik.uni-hamburg.de

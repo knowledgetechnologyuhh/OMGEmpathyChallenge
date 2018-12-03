@@ -149,6 +149,7 @@ Your code must be submitted as a GitHub public link. Please include the necessar
 
 2) Each participating team must submit a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications (Latex (http://fg2019.org/wp-content/uploads/2018/06/FG2019_latex_template.zip)  and Word (http://fg2019.org/wp-content/uploads/2018/06/msw_a4_format_FG2019_forReview.doc)  templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings. The paper must be submitted in PDF format.
 
+Both code and papers must be submitted to barros @ informatik.uni-hamburg.de together with the name of the submitting team.
 
 **License**
 

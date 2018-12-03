@@ -136,13 +136,19 @@ To participate to the challenge, please send us an email to barros @ informatik.
 
 We split the corpus into three subsets: training, validation and testing. The participants will receive the training and validation sets, together with the associated annotations once they subscribe to the challenge. The subscription will be done via e-mail. Each participant team must consist of 1 to 5 participants and must agree to use the data only for scientific purposes. Each team can choose to take part in one or both the tracks.
 
-After the training period is over, the testing set will be released without the associated annotations.
+**Final Submission*
 
-Each team must submit, via e-mail, their final predictions as a .csv file for each video on the test set. The format of the .csv file must be the same as the provided annotations. Together with the final submission, each team must send a short 2-4 pages paper describing their solution published on [Arxiv](https://arxiv.org) and the link for a github page to their solution. If a team fails to submit any of these items, their submission will be invalidated. Each team can submit 3 different results for each track.
+Your final submission will be divided into two steps: 1) final results and code and 2) paper.
 
-**Paper submission**
+1) Your final results must be submitted as a .zip file containing different ".csv" files, one for each video. The name of each csv must be the name of each video. For example:
+Subject_1_Story_3.mp4 --> Subject_1_Story_3.csv
 
-Each participating team must submit, together with their final results, one short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications ([Latex](http://fg2019.org/wp-content/uploads/2018/06/FG2019_latex_template.zip) (Please create the pdf using FGfinalcopy) and [Word](https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/Conference-template-A4.doc) templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings.
+Each ".csv" must contain a header ("valence") and each row of the file must be the valence output for each frame of the video. We are sending a frame counter file which contains the number of required frames per video. Each team can submit up to three different results. Please also send a short paragraph describing the differences of each set of results you submit.
+
+Your code must be submitted as a GitHub public link. Please include the necessary information to run the code properly.
+
+2) Each participating team must submit a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications (Latex (http://fg2019.org/wp-content/uploads/2018/06/FG2019_latex_template.zip)  and Word (http://fg2019.org/wp-content/uploads/2018/06/msw_a4_format_FG2019_forReview.doc)  templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings. The paper must be submitted in PDF format.
+
 
 **License**
 

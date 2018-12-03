@@ -124,9 +124,9 @@ Important dates:
 - 25th of September 2018  - Opening of the Challenge - Team registrations begin
 - 1st of October 2018 - Training/validation data and annotation available
 - 3rd of December 2018 - Test data release
-- 5th of December 2018 - Final submission (Results and code)
-- 7th of December 2018 - Final submission (Paper)
-- 10th of December 2018 - Announcement of the winners
+- 7th of December 2018 - Final submission (Results and code)
+- 13th of December 2018 - Final submission (Paper)
+- 14th of December 2018 - Announcement of the winners
 
 To participate to the challenge, please send us an email to barros @ informatik.uni-hamburg.de with the title "OMG-Empathy Team Registration". This e-mail must contain the following information:
 - Team Name

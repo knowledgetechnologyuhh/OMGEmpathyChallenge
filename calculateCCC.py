@@ -96,19 +96,6 @@ def calculateCCC(validationFolder, modelOutputFolder):
 
         dataYPredValence = dataYPred["valence"]
 
-        len1 = len(dataYPredValence)
-        len2 = len(dataYValence)
-        while not len(dataYPredValence) == len(dataYValence):
-            df2 = pandas.DataFrame([[5]])
-            dataYPredValence.append(df2, ignore_index=True)
-
-            print("Len1:", len(dataYValence))
-            print ("Len2:", len(dataYPredValence))
-            print (dataYPredValence)
-            raw_input("here")
-
-            # print ("Pred:", value)
-            # raw_input("here")
         valenceCCC, vcor = ccc(dataYValence, dataYPredValence, validationFiles[fileIndex])
 
 

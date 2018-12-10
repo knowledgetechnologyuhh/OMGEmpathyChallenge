@@ -5,6 +5,7 @@ import os
 from scipy.stats import pearsonr
 import numpy
 import pandas
+import math
 
 
 def mse(y_true, y_pred):
@@ -16,13 +17,19 @@ def f1(y_true, y_pred):
     label = [0,1,2,3,4,5,6]
     return f1_score(y_true,y_pred,labels=label,average="micro")
 
-def ccc(y_true, y_pred):
+def ccc(y_true, y_pred, fileName):
     true_mean = numpy.mean(y_true)
     true_variance = numpy.var(y_true)
     pred_mean = numpy.mean(y_pred)
     pred_variance = numpy.var(y_pred)
 
+
     rho,_ = pearsonr(y_pred,y_true)
+
+    if math.isnan(rho):
+        rho = 0
+    # if fileName == "Subject_9_Story_3.csv":
+    #     raw_input("here")
 
     std_predictions = numpy.std(y_pred)
 
@@ -36,6 +43,9 @@ def ccc(y_true, y_pred):
 
 def orderFiles (folder):
     dataList = os.listdir(folder)
+
+    if ".DS_Store" in dataList:
+        dataList.remove(".DS_Store")
 
     dataList = sorted(sorted(dataList, key=lambda x: int(x.split(".")[0].split("_")[3])), key=lambda x: int(x.split(".")[0].split("_")[1]))
 
@@ -58,6 +68,8 @@ def calculateCCC(validationFolder, modelOutputFolder):
 
     currentSubject = validationFiles[0].split(".")[0].split("_")[1]
     for fileIndex in range (len(validationFiles)):
+        print ("File:", fileIndex)
+        print("File:", validationFiles[fileIndex])
 
         subject = int(validationFiles[fileIndex].split(".")[0].split("_")[1])
         story = int(validationFiles[fileIndex].split(".")[0].split("_")[3])
@@ -75,9 +87,30 @@ def calculateCCC(validationFolder, modelOutputFolder):
 
         dataYValence = dataY["valence"]
 
+        #
+        #
+        # print ("A:", dataYPred)
+        # raw_input("here")
+
+
+
         dataYPredValence = dataYPred["valence"]
 
-        valenceCCC, vcor = ccc(dataYValence, dataYPredValence)
+        len1 = len(dataYPredValence)
+        len2 = len(dataYValence)
+        while not len(dataYPredValence) == len(dataYValence):
+            df2 = pandas.DataFrame([[5]])
+            dataYPredValence.append(df2, ignore_index=True)
+
+            print("Len1:", len(dataYValence))
+            print ("Len2:", len(dataYPredValence))
+            print (dataYPredValence)
+            raw_input("here")
+
+            # print ("Pred:", value)
+            # raw_input("here")
+        valenceCCC, vcor = ccc(dataYValence, dataYPredValence, validationFiles[fileIndex])
+
 
         subjectNumber = validationFiles[fileIndex].split(".")[0].split("_")[1]
 

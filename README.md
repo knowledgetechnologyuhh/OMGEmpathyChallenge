@@ -118,7 +118,7 @@ We provide the following scripts:
 To calculate the CCC for both tracks, the script takes as arguments two folders: one with the validation .csv files and one with the model's .csv files. Be aware that the folders must contain the same amount of files and they must have he same file name - following the same structure as the annotations: Subject_X_Story_X.csv. Each file must contain a header ("valence") and each row of the file must be the valence output for each frame of the video.
 
 
-**How to participate**
+**OMG Empathy Challenge 2019**
 
 Important dates: 
 - 25th of September 2018  - Opening of the Challenge - Team registrations begin
@@ -136,20 +136,12 @@ To participate to the challenge, please send us an email to barros @ informatik.
 
 We split the corpus into three subsets: training, validation and testing. The participants will receive the training and validation sets, together with the associated annotations once they subscribe to the challenge. The subscription will be done via e-mail. Each participant team must consist of 1 to 5 participants and must agree to use the data only for scientific purposes. Each team can choose to take part in one or both the tracks.
 
-**Final Submission*
+final results: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empathy2018_results2018.html
 
-Your final submission will be divided into two steps: 1) final results and code and 2) paper.
+**Access do the dataset**
 
-1) Your final results must be submitted as a .zip file containing different ".csv" files, one for each video. The name of each csv must be the name of each video. For example:
-Subject_1_Story_3.mp4 --> Subject_1_Story_3.csv
+To have full access to this corpus, please send an e-mail with your name, affiliation and research summary to:barros@informatik.uni-hamburg.de
 
-Each ".csv" must contain a header ("valence") and each row of the file must be the valence output for each frame of the video. We are sending a frame counter file which contains the number of required frames per video. Each team can submit up to three different results. Please also send a short paragraph describing the differences of each set of results you submit.
-
-Your code must be submitted as a GitHub public link. Please include the necessary information to run the code properly.
-
-2) Each participating team must submit a short 2-4 pages paper describing their solution. This paper must follow the IEEE specifications (Latex (http://fg2019.org/wp-content/uploads/2018/06/FG2019_latex_template.zip)  and Word (http://fg2019.org/wp-content/uploads/2018/06/msw_a4_format_FG2019_forReview.doc)  templates) and will be peer reviewed following the FG 2019 standards. The accepted papers will be included in the FG 2019 workshop proceedings. The paper must be submitted in PDF format.
-
-Both code and papers must be submitted to barros @ informatik.uni-hamburg.de together with the name of the submitting team.
 
 **License**
 
@@ -159,6 +151,7 @@ This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license
 - The references are provided at the end of this page.
 - To use the corpus for research purpose only.
 - To not provide the corpus to any second parties.
+- To delete the dataset as soon as you finish using it.
 
 
 **More information** 

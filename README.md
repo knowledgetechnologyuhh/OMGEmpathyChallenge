@@ -153,6 +153,11 @@ This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license
 - To not provide the corpus to any second parties.
 - To delete the dataset as soon as you finish using it.
 
+**Reference paper**
+
+ - Paper: Barros, P., Churamani, N., Lim, A., Wermter, S. The OMG-Empathy Dataset: Evaluating the Impact of Affective Behavior in Storytelling. arXiv preprint 	arXiv:1908.11706. https://arxiv.org/abs/1908.11706
+ 
+ 
 
 **More information** 
 

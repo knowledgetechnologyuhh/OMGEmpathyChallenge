@@ -164,4 +164,4 @@ This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license
 - our website: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empathy.html
 - You can also find usefull scripts for processing the dataset here: https://github.com/knowledgetechnologyuhh/OMGEmpathyChallenge
 
-For more information: barros@informatik.uni-hamburg.de
+For more information: pablovin@gmail.com

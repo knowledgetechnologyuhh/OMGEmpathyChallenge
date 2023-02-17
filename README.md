@@ -128,7 +128,7 @@ Important dates:
 - 13th of December 2018 - Final submission (Paper)
 - 14th of December 2018 - Announcement of the winners
 
-To participate to the challenge, please send us an email to barros @ informatik.uni-hamburg.de with the title "OMG-Empathy Team Registration". This e-mail must contain the following information:
+To participate to the challenge, please send us an email to pablovin@gmail.com / nc528@cam.ac.uk with the title "OMG-Empathy Team Registration". This e-mail must contain the following information:
 - Team Name
 - Team Members
 - Affiliation

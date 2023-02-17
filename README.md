@@ -155,7 +155,8 @@ This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license
 
 **Reference paper**
 
- - Barros, P., Churamani, N., Lim, A., Wermter, S. The OMG-Empathy Dataset: Evaluating the Impact of Affective Behavior in Storytelling. arXiv preprint 	arXiv:1908.11706. https://arxiv.org/abs/1908.11706
+ - Barros, P., Churamani, N., Lim, A., & Wermter, S. (2019, September). The omg-empathy dataset: Evaluating the impact of affective behavior in storytelling. In 2019 8th International Conference on Affective Computing and Intelligent Interaction (ACII) (pp. 1-7). IEEE. https://arxiv.org/abs/1908.11706
+ 
  
  
 

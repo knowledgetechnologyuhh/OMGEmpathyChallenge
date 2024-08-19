@@ -10,25 +10,7 @@ Angelica Lim, Simon Fraser University, Canada </br>
 Stefan Wermter, Hamburg University, Germany </br>
 
 **OMG-Empathy Dataset**
-
-The OMG-Empathy corpus is composed of recordings of two individuals talking to each other about a certain topic. One of the individuals is an actor who leads a semi-scripted conversation with a listener. The actors tells stories about what happened to them recently, and we recorded the reactions of the listener to these stories over time, which can contain short interactions.
-
-We created a series of eight topics that the actor talked about, each of them related to one or more emotional state:
-
-- Story 1 - A childhood friend.
-- Story 2 - I started a band!
-- Story 3 - My relation with my dog.
-- Story 4 - I had a bad flight experience.
-- Story 5 - I cheated on an exam when I was younger.
-- Story 6 - I had an adventurous traveling experience.
-- Story 7 - I won a martial arts challenge.
-- Story 8 - I ate a very bad food.
-
-The actor was free and encouraged to improvise on each of these topics, so that we recorded a natural conversation scenario, but the actor was instructed to maintain the control over the conversation. This way, we guaranteed that the recorded interaction were not one-sided, and at the same time that the listener did not overtake the direction of the conversation.
-
-We recorded the audio and visual data of both the actor and listener for each interaction. Immediately after each session, we asked the listeners to watch the interactions on a computer screen and use a joystick to annotate how they felt in terms of valence using a continuous scale ranging from positive to negative values. The use of the joystick allowed for continuous and gradual tracking of annotations which are temporally related to the interaction scenario.
-
-We used a total of four different actors, each one of them taking part in the conversation with two different topics. This way we collected different reaction levels from different listeners for the same actor. We had a total of 10 subjects, each one taking part in all the eight topics. This gave us 80 different interaction videos. Each video had an average of 5 minutes and 12 seconds, providing us with 415 minutes (around 7 hours) of recordings.
+More information can be found at the [OMG Empathy Dataset repository](https://github.com/pablovin/OmgEmapathyPlus)
 
 **Tracks**
 
@@ -140,7 +122,7 @@ final results: https://www2.informatik.uni-hamburg.de/wtm/omgchallenges/omg_empa
 
 **Access do the dataset**
 
-To have full access to this corpus, please send an e-mail with your name, affiliation and research summary to:barros@informatik.uni-hamburg.de
+To have full access to this corpus, please send an e-mail with your name, affiliation and research summary to: pablovin @ gmail.com
 
 
 **License**
@@ -156,7 +138,6 @@ This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license
 **Reference paper**
 
  - Barros, P., Churamani, N., Lim, A., & Wermter, S. (2019, September). The omg-empathy dataset: Evaluating the impact of affective behavior in storytelling. In 2019 8th International Conference on Affective Computing and Intelligent Interaction (ACII) (pp. 1-7). IEEE. https://arxiv.org/abs/1908.11706
- 
  
  
 

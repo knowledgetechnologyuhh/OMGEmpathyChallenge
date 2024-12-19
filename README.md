@@ -127,7 +127,7 @@ To have full access to this corpus, please send an e-mail with your name, affili
 
 **License**
 
-This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license. If you use this corpus, you have to agree with the following itens:
+This corpus is distributed under the Creative Commons CC BY-NC-SA 3.0 DE license. If you use this corpus, you have to agree with the following items:
 
 - To cite our reference in any of your papers that make any use of the database. 
 - The references are provided at the end of this page.
